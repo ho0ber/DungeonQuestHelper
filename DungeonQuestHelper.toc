@@ -1,0 +1,11 @@
+## Interface: 16001
+## Title: Dungeon Quest Helper
+## Notes: Horde dungeon quest prep for WoW Forever. Shows what to pick up, where, and whether you're ready. /dqh
+## Author: Hoober
+## Version: 0.7.0
+## SavedVariables: DungeonQuestHelperDB
+## IconTexture: Interface\Icons\INV_Misc_Book_09
+
+Data.lua
+Core.lua
+Minimap.lua
