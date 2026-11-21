@@ -422,6 +422,18 @@ local Refresh
 
 -- "Wailing Caverns  (18-21)". With a level given, the range is colored for that level:
 -- grey = past it, green = sweet spot, orange = quests open but not there yet, red = too low for the quests.
+-- True when every non-optional quest line for the dungeon is turned in (its last step is done).
+local function DungeonDone(d)
+    local any = false
+    for _, e in ipairs(d.entries) do
+        if not e.optional then
+            any = true
+            if not IsDone(e.steps[#e.steps].id) then return false end
+        end
+    end
+    return any
+end
+
 local function DungeonLabel(d, level)
     if not d.sweetMin then return d.name end
     local range = d.sweetMin .. "-" .. d.sweetMax
@@ -433,7 +445,7 @@ local function DungeonLabel(d, level)
         else color = RED end
         range = color .. range .. "|r"
     end
-    return d.name .. "  (" .. range .. ")"
+    return d.name .. "  (" .. range .. ")" .. (level and DungeonDone(d) and ("  " .. ICON.ready) or "")
 end
 
 local function SelectDungeon(i, manual)
