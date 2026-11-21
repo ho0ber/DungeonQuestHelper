@@ -449,6 +449,12 @@ ns.dungeons = {
                 { id = 1144, lvl = 30, min = 22, from = "willix", to = "willix", dungeon = true, inside = true, xp = 7250,
                   obj = "Escort Willix out: he's down the thorny path to the right of the entrance." },
               } },
+            { name = "An Unholy Alliance", type = 4,
+              reward = "XP; part 2 is done in Razorfen Downs",
+              steps = {
+                { id = 6522, lvl = 36, min = 28, from = "Small Scroll (Charlga Razorflank)", to = "varimathras", dungeon = true, inside = true, xp = 2800,
+                  obj = "Charlga Razorflank, the last boss, drops a Small Scroll. Take it to Varimathras in Undercity." },
+              } },
         },
     },
     {
